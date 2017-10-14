@@ -2,6 +2,7 @@ package twit;
 
 import java.io.IOException;
 import java.util.HashSet;
+import java.util.ArrayList;
 
 import stm.StorageManager;
 import twitter4j.StallWarning;
@@ -44,7 +45,7 @@ public class TwitterSampler {
 			final lang.LanguageClassifier languageClassifier, Configuration conf) {
 		StatusListener listener = new StatusListener() {
 			public void onStatus(Status status) {
-				HashSet<String> words = new HashSet<String>();
+				ArrayList<String> words = new ArrayList<String>();
 				for (String w : status.getText().split(" "))
 					words.add(w);
 

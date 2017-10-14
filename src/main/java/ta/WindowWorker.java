@@ -1,6 +1,7 @@
 package ta;
 
 import java.util.Collection;
+import java.util.ArrayList;
 
 import rc.RelevanceCheck;
 import stm.StorageManager;
@@ -40,7 +41,7 @@ public class WindowWorker implements Runnable {
 
 	private boolean satisfyLanguage(Tweet tweet) {
 		if (Acquisition.languageCheck)
-			return Acquisition.languageClassifier.satisfy(tweet.getTerms());
+			return Acquisition.languageClassifier.satisfy(new ArrayList<String>(tweet.getTerms()));
 		return true;
 	}
 
